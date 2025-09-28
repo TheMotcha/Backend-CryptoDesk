@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-
 public class UsuarioRepository {
     public void save(Usuario user){
     //Logica de guardado en la BD
