@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar credenciales de Firebase
+src/main/resources/firebase/bd-prueba-cryptodesk-firebase-adminsdk-fbsvc-d4f523b9c2.json
