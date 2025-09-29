@@ -17,7 +17,7 @@ public class FirebaseConfiguration {
         if (FirebaseApp.getApps().isEmpty()) {
             // Cargar el archivo de credenciales desde resources
             InputStream serviceAccount = getClass().getClassLoader()
-                    .getResourceAsStream("firebase/serviceAccountKey.json");
+                    .getResourceAsStream("firebase/bd-prueba-cryptodesk-firebase-adminsdk-fbsvc-d4f523b9c2.json");
 
             if (serviceAccount == null) {
                 throw new IOException("No se encontró el archivo serviceAccountKey.json en resources/firebase/");
