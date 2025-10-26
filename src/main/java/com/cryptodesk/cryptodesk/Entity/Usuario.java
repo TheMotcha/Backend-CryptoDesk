@@ -4,7 +4,7 @@ public class Usuario {
 
     private int id_User;
     private String nombre_Usuario; //El nombre
-    private String apellido_Usario; //El apellido
+    private String apellido_Usuario; //El apellido
     private String tag_Usuario; //El nombre de usuario en el sistema (Credenciales)
     private String password_Usuario;
     private String creacion_Usuario;//Fecha de creacion
@@ -25,12 +25,12 @@ public class Usuario {
         this.nombre_Usuario = nombre_Usuario;
     }
 
-    public String getApellido_Usario() {
-        return apellido_Usario;
+    public String getApellido_Usuario() {
+        return apellido_Usuario;
     }
 
-    public void setApellido_Usario(String apellido_Usario) {
-        this.apellido_Usario = apellido_Usario;
+    public void setApellido_Usuario(String apellido_Usuario) {
+        this.apellido_Usuario = apellido_Usuario;
     }
 
     public String getTag_Usuario() {
