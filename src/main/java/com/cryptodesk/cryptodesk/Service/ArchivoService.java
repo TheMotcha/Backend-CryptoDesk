@@ -1,4 +1,4 @@
-package com.cryptodesk.cryptodesk.service;
+package com.cryptodesk.cryptodesk.Service;
 
 import com.cryptodesk.cryptodesk.Entity.Archivo;
 import com.cryptodesk.cryptodesk.Repository.ArchivoRepository;
