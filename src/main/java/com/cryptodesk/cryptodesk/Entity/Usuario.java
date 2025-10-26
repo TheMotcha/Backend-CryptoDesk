@@ -1,18 +1,19 @@
 package com.cryptodesk.cryptodesk.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_User;
-    private String nombre_Usuario; //El nombre
-    private String apellido_Usuario; //El apellido
-    private String tag_Usuario; //El nombre de usuario en el sistema (Credenciales)
-    private String password_Usuario;
-    private String creacion_Usuario;//Fecha de creacion
+    private String nombreUsuario; //El nombre
+    private String apellidoUsuario; //El apellido
+    private String tagUsuario; //El nombre de usuario en el sistema (Credenciales)
+    private String passwordUsuario;
+    private String creacionUsuario;//Fecha de creacion
 
     public int getId_User() {
         return id_User;
@@ -22,43 +23,43 @@ public class Usuario {
         this.id_User = id_User;
     }
 
-    public String getNombre_Usuario() {
-        return nombre_Usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre_Usuario(String nombre_Usuario) {
-        this.nombre_Usuario = nombre_Usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public String getApellido_Usuario() {
-        return apellido_Usuario;
+    public String getApellidoUsuario() {
+        return apellidoUsuario;
     }
 
-    public void setApellido_Usuario(String apellido_Usuario) {
-        this.apellido_Usuario = apellido_Usuario;
+    public void setApellidoUsuario(String apellidoUsuario) {
+        this.apellidoUsuario = apellidoUsuario;
     }
 
-    public String getTag_Usuario() {
-        return tag_Usuario;
+    public String getTagUsuario() {
+        return tagUsuario;
     }
 
-    public void setTag_Usuario(String tag_Usuario) {
-        this.tag_Usuario = tag_Usuario;
+    public void setTagUsuario(String tagUsuario) {
+        this.tagUsuario = tagUsuario;
     }
 
-    public String getPassword_Usuario() {
-        return password_Usuario;
+    public String getPasswordUsuario() {
+        return passwordUsuario;
     }
 
-    public void setPassword_Usuario(String password_Usuario) {
-        this.password_Usuario = password_Usuario;
+    public void setPasswordUsuario(String passwordUsuario) {
+        this.passwordUsuario = passwordUsuario;
     }
 
-    public String getCreacion_Usuario() {
-        return creacion_Usuario;
+    public String getCreacionUsuario() {
+        return creacionUsuario;
     }
 
-    public void setCreacion_Usuario(String creacion_Usuario) {
-        this.creacion_Usuario = creacion_Usuario;
+    public void setCreacionUsuario(String creacionUsuario) {
+        this.creacionUsuario = creacionUsuario;
     }
 }
