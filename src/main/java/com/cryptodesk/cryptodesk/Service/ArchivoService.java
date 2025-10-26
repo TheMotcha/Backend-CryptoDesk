@@ -1,23 +1,38 @@
-package com.cryptodesk.cryptodesk.Service;
+package com.cryptodesk.cryptodesk.service;
 
 import com.cryptodesk.cryptodesk.Entity.Archivo;
 import com.cryptodesk.cryptodesk.Repository.ArchivoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ArchivoService {
 
-    private ArchivoRepository a_file;
+    private final ArchivoRepository archivoRepository;
 
-    public void addArchivo(Archivo file){
-        a_file.save(file);
+    public ArchivoService(ArchivoRepository archivoRepository) {
+        this.archivoRepository = archivoRepository;
     }
 
-    public void deleteArchivo(Archivo file){
-        a_file.delete(file);
+    // Crear o actualizar archivo
+    public Archivo guardar(Archivo archivo) {
+        return archivoRepository.save(archivo);
     }
 
-    public void updateArchivo(Archivo file){
-        a_file.update(file);
+    // Listar todos los archivos
+    public List<Archivo> listarTodos() {
+        return archivoRepository.findAll();
+    }
+
+    // Buscar archivo por ID
+    public Optional<Archivo> buscarPorId(int id) {
+        return archivoRepository.findById(id);
+    }
+
+    // Eliminar archivo
+    public void eliminar(int id) {
+        archivoRepository.deleteById(id);
     }
 }
