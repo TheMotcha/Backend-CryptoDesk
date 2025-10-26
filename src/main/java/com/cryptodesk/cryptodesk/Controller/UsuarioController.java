@@ -40,7 +40,7 @@ public class UsuarioController {
     // 🔹 Actualizar usuario
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> actualizarUsuario(@PathVariable int id, @RequestBody Usuario usuario) {
-        usuario.setId_User(id); // Aseguramos que el ID de la URL prevalezca
+        usuario.setIdUser(id); // Aseguramos que el ID de la URL prevalezca
         Usuario actualizado = usuarioService.guardar(usuario);
         return ResponseEntity.ok(actualizado);
     }

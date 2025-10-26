@@ -8,19 +8,19 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_User;
+    private int idUser;
     private String nombreUsuario; //El nombre
     private String apellidoUsuario; //El apellido
     private String tagUsuario; //El nombre de usuario en el sistema (Credenciales)
     private String passwordUsuario;
     private String creacionUsuario;//Fecha de creacion
 
-    public int getId_User() {
-        return id_User;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId_User(int id_User) {
-        this.id_User = id_User;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getNombreUsuario() {
