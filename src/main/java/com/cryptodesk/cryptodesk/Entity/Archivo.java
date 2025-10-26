@@ -1,14 +1,22 @@
 package com.cryptodesk.cryptodesk.Entity;
 
-public class Archivo {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Archivo {
+    @Id
     private int id_Archivo;
     private String nom_Archivo;
     private String tipo_Archivo;
     private double size_Archivo;
     private String ruta_Archivo;
-    private Usuario usuario_Owner;
     private String fecha_Archivo;
+
+    @ManyToOne
+    private Usuario usuario_Owner;
+
 
     public int getId_Archivo() {
         return id_Archivo;

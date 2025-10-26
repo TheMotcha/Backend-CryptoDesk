@@ -1,7 +1,12 @@
 package com.cryptodesk.cryptodesk.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario {
 
+    @Id
     private int id_User;
     private String nombre_Usuario; //El nombre
     private String apellido_Usuario; //El apellido
