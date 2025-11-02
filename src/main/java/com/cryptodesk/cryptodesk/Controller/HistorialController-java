@@ -1,0 +1,32 @@
+package com.cryptodesk.cryptodesk.Controller;
+
+import com.cryptodesk.cryptodesk.Entity.Archivo;
+import com.cryptodesk.cryptodesk.Service.ArchivoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/historial")
+public class HistorialController {
+
+    @Autowired
+    private ArchivoService archivoService;
+
+    //Listar archivos encriptados por usuario
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<Archivo>> listarPorUsuario(@PathVariable int idUsuario) {
+        List<Archivo> archivos = archivoService.listarPorUsuario(idUsuario);
+        return ResponseEntity.ok(archivos);
+    }
+
+    //Obtener detalles de archivo encriptado
+    @GetMapping("/archivo/{idArchivo}")
+    public ResponseEntity<Archivo> obtenerDetalle(@PathVariable int idArchivo) {
+        return archivoService.buscarPorId(idArchivo)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+}
