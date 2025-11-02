@@ -35,4 +35,29 @@ public class UsuarioService {
     public void eliminar(int id) {
         usuarioRepository.deleteById(id);
     }
+
+    public Optional<Usuario> buscarPorCorreo(Object correo) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorCorreo'");
+    }
+
+    public boolean validarCredenciales(Usuario encontrado, Object contrasena) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'validarCredenciales'");
+    }
+
+    public Optional<Usuario> buscarPorCorreo(String correo) {
+    return usuarioRepository.findAll()
+            .stream()
+            .filter(u -> u.getCorreo() != null && ((String) u.getCorreo()).equalsIgnoreCase(correo))
+            .findFirst();
+    }
+
+    public boolean validarCredenciales(Usuario usuario, String contrasena) {
+    if (usuario == null || contrasena == null) {
+        return false;
+    }
+    
+    return usuario.getContrasena().equals(contrasena);
+}
 }
