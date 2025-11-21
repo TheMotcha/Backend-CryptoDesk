@@ -49,7 +49,7 @@ public class UsuarioService {
     public Optional<Usuario> buscarPorCorreo(String correo) {
     return usuarioRepository.findAll()
             .stream()
-            .filter(u -> u.getCorreo() != null && ((String) u.getCorreo()).equalsIgnoreCase(correo))
+            .filter(u -> u.getCorreoUsuario() != null && ((String) u.getCorreoUsuario()).equalsIgnoreCase(correo))
             .findFirst();
     }
 
@@ -58,6 +58,6 @@ public class UsuarioService {
         return false;
     }
     
-    return usuario.getContrasena().equals(contrasena);
+    return usuario.getPasswordUsuario().equals(contrasena);
 }
 }

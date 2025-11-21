@@ -14,9 +14,18 @@ public class Usuario {
     private String tagUsuario; //El nombre de usuario en el sistema (Credenciales)
     private String passwordUsuario;
     private String creacionUsuario;//Fecha de creacion
+    private String correoUsuario;//correo @up.ac.pa
 
     public int getIdUser() {
         return idUser;
+    }
+
+    public String getCorreoUsuario() {
+        return correoUsuario;
+    }
+
+    public void setCorreoUsuario(String correoUsuario) {
+        this.correoUsuario = correoUsuario;
     }
 
     public void setIdUser(int idUser) {
