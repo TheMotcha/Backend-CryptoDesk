@@ -20,39 +20,29 @@ public class EncriptacionController {
     }
 
     //Encriptar archivo
-    @PostMapping("/archivo/encriptar")
-    public ResponseEntity<?> encriptarArchivo(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/texto/encriptar")
+    public ResponseEntity<?> encriptarTexto(@RequestParam("texto") String texto) {
         try {
-            byte[] encrypted = tool.encriptarArchivo(file.getBytes());
-
-            return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getOriginalFilename() + ".enc")
-                    .body(encrypted);
+            String encrypted = tool.encrypt(texto);
+            return ResponseEntity.ok(encrypted);
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al encriptar archivo: " + e.getMessage());
+                    .body("Error al encriptar texto: " + e.getMessage());
         }
     }
 
-    //Desencriptar archivo
-    @PostMapping("/archivo/desencriptar")
-    public ResponseEntity<?> desencriptarArchivo(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/texto/desencriptar")
+    public ResponseEntity<?> desencriptarTexto(@RequestParam("texto") String textoEncriptado) {
         try {
-            byte[] decrypted = tool.desencriptarArchivo(file.getBytes());
-
-            String originalName = file.getOriginalFilename().replace(".enc", "");
-
-            return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + originalName)
-                    .body(decrypted);
+            String decrypted = tool.decrypt(textoEncriptado);
+            return ResponseEntity.ok(decrypted);
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al desencriptar archivo: " + e.getMessage());
+                    .body("Error al desencriptar texto: " + e.getMessage());
         }
     }
-
     @GetMapping("/ping")
     public ResponseEntity<String> ping() {
         return ResponseEntity.ok("Cifrado listo (modo archivos)");
