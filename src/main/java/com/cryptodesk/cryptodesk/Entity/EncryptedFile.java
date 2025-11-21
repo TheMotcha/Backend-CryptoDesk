@@ -1,6 +1,7 @@
-package com.cryptodesk.cryptodesk.Model;
+package com.cryptodesk.cryptodesk.Entity;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
