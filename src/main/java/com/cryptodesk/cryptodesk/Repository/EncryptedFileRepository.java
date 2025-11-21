@@ -1,6 +1,6 @@
 package com.cryptodesk.cryptodesk.Repository;
 
-import com.cryptodesk.cryptodesk.Model.EncryptedFile;
+import com.cryptodesk.cryptodesk.Entity.EncryptedFile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
