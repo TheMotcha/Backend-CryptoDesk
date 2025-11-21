@@ -2,6 +2,7 @@ package com.cryptodesk.cryptodesk.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -9,11 +10,9 @@ public class Archivo {
     @Id
     private int idArchivo;
     private String nomArchivo;
-    private String tipoArchivo;
-    private double sizeArchivo;
-    private String rutaArchivo;
+    @Lob
+    private String contenidoArchivo;
     private String fechaArchivo;
-
     @ManyToOne
     private Usuario usuarioOwner;
 
@@ -34,30 +33,6 @@ public class Archivo {
         this.nomArchivo = nomArchivo;
     }
 
-    public String getTipoArchivo() {
-        return tipoArchivo;
-    }
-
-    public void setTipoArchivo(String tipoArchivo) {
-        this.tipoArchivo = tipoArchivo;
-    }
-
-    public double getSizeArchivo() {
-        return sizeArchivo;
-    }
-
-    public void setSizeArchivo(double sizeArchivo) {
-        this.sizeArchivo = sizeArchivo;
-    }
-
-    public String getRutaArchivo() {
-        return rutaArchivo;
-    }
-
-    public void setRutaArchivo(String rutaArchivo) {
-        this.rutaArchivo = rutaArchivo;
-    }
-
     public Usuario getUsuarioOwner() {
         return usuarioOwner;
     }
@@ -72,5 +47,13 @@ public class Archivo {
 
     public void setFechaArchivo(String fechaArchivo) {
         this.fechaArchivo = fechaArchivo;
+    }
+
+    public String getContenidoArchivo() {
+        return contenidoArchivo;
+    }
+
+    public void setContenidoArchivo(String contenidoArchivo) {
+        this.contenidoArchivo = contenidoArchivo;
     }
 }
